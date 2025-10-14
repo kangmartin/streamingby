@@ -1,6 +1,6 @@
 import type { Content } from '../types';
 
-const API_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
 
 export interface FetchContentParams {
   type: 'movie' | 'tv';
