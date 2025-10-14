@@ -71,9 +71,7 @@ app.get("/popular", async (req, res)=>{
                 for (const countryCode in providers) {
                     const countryProviders = providers[countryCode]
                     const allProviders = [
-                        ...(countryProviders.flatrate || []),
-                        ...(countryProviders.buy || []),
-                        ...(countryProviders.rent || [])
+                        ...(countryProviders.flatrate || [])
                     ]
 
 
@@ -83,12 +81,12 @@ app.get("/popular", async (req, res)=>{
                         matchingProviders.forEach(p => {
                             const existingProvider = providerNames.find(existing => existing.id === p.provider_id)
                             if (existingProvider) {
-                                // Ajouter le pays à ce provider
+
                                 if (!existingProvider.countries.includes(countryCode)) {
                                     existingProvider.countries.push(countryCode)
                                 }
                             } else {
-                                // Créer une nouvelle entrée pour ce provider
+
                                 providerNames.push({
                                     id: p.provider_id,
                                     name: p.provider_name,
