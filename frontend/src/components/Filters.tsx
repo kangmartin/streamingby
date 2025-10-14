@@ -76,7 +76,7 @@ export const Filters = ({
       {/* Pays */}
       <div>
         <label className="block text-sm font-semibold mb-3 text-gray-400">
-          Pays à exclure (contenu NON disponible dans)
+          Disponible partout SAUF
         </label>
         <select
           className="select select-ghost w-full bg-base-300"
