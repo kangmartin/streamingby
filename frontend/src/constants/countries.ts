@@ -5,6 +5,7 @@ export interface Country {
 }
 
 export const COUNTRIES: Country[] = [
+    { code: 'FR', name: 'France', flag: '🇫🇷' },
   { code: 'ZA', name: 'Afrique du Sud', flag: '🇿🇦' },
   { code: 'AL', name: 'Albanie', flag: '🇦🇱' },
   { code: 'DE', name: 'Allemagne', flag: '🇩🇪' },
