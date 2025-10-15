@@ -69,7 +69,6 @@ export const COUNTRIES: Country[] = [
   { code: 'ET', name: 'Éthiopie', flag: '🇪🇹' },
   { code: 'FJ', name: 'Fidji', flag: '🇫🇯' },
   { code: 'FI', name: 'Finlande', flag: '🇫🇮' },
-  { code: 'FR', name: 'France', flag: '🇫🇷' },
   { code: 'GA', name: 'Gabon', flag: '🇬🇦' },
   { code: 'GM', name: 'Gambie', flag: '🇬🇲' },
   { code: 'GE', name: 'Géorgie', flag: '🇬🇪' },
