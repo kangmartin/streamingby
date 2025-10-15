@@ -74,19 +74,28 @@ app.get("/popular", async (req, res)=>{
                         ...(countryProviders.flatrate || [])
                     ]
 
-
+                    // Vérifier si au moins un provider correspond au filtre
                     const matchingProviders = allProviders.filter(p => onlyThisProvider.includes(p.provider_id))
                     if (matchingProviders.length > 0) {
                         availableCountries.push(countryCode)
-                        matchingProviders.forEach(p => {
+                    }
+                }
+
+                // Si le contenu a au moins un provider correspondant, récupérer TOUS les providers de streaming
+                if (availableCountries.length > 0) {
+                    for (const countryCode in providers) {
+                        const countryProviders = providers[countryCode]
+                        const allStreamingProviders = [
+                            ...(countryProviders.flatrate || [])
+                        ]
+
+                        allStreamingProviders.forEach(p => {
                             const existingProvider = providerNames.find(existing => existing.id === p.provider_id)
                             if (existingProvider) {
-
                                 if (!existingProvider.countries.includes(countryCode)) {
                                     existingProvider.countries.push(countryCode)
                                 }
                             } else {
-
                                 providerNames.push({
                                     id: p.provider_id,
                                     name: p.provider_name,
