@@ -5,7 +5,11 @@ import cors from "cors"
 
 dotenv.config()
 const app = express()
-app.use(cors())
+app.use(cors({
+    origin: '*',
+    methods: ['GET', 'POST'],
+    credentials: true
+}))
 const port = process.env.PORT
 const api_key = process.env.API_KEY
 
